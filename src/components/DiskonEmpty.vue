@@ -32,7 +32,7 @@
 
       <button
         @click="$emit('add-diskon')"
-        class="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-4xl transition-colors shadow-sm"
+        class="flex items-center cursor-pointer gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-4xl transition-colors shadow-sm"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
