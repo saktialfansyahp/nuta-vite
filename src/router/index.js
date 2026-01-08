@@ -4,10 +4,6 @@ import DiskonPage from '@/views/DiskonPage.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/diskon',
-  },
-  {
-    path: '/diskon',
     name: 'DiskonPage',
     component: DiskonPage,
   },
