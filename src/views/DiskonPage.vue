@@ -155,6 +155,7 @@
 
         <DiskonEmpty v-else @add-diskon="openModal" />
         <Pagination
+          v-if="diskons.length > 0"
           :currentPage="currentPage"
           :totalPages="totalPages"
           :itemsPerPage="itemsPerPage"
@@ -640,15 +641,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-</style>
