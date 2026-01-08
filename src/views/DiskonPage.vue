@@ -143,7 +143,7 @@
       <div class="w-full px-8 mx-auto">
         <DiskonList
           v-if="diskons.length > 0"
-          :diskons="filteredDiskons"
+          :diskons="paginatedDiskons"
           :selectedIds="selectedIds"
           :selectAll="selectAll"
           @toggle-select-all="toggleSelectAll"
@@ -154,6 +154,13 @@
         />
 
         <DiskonEmpty v-else @add-diskon="openModal" />
+        <Pagination
+          :currentPage="currentPage"
+          :totalPages="totalPages"
+          :itemsPerPage="itemsPerPage"
+          @change-page="handleChangePage"
+          @update-items-per-page="handleUpdateItemsPerPage"
+        />
       </div>
     </div>
 
@@ -191,6 +198,7 @@ import DiskonList from '@/components/DiskonList.vue'
 import DiskonEmpty from '@/components/DiskonEmpty.vue'
 import DiskonModal from '@/components/DiskonModal.vue'
 import DiskonDeleteModal from '@/components/DiskonDeleteModal.vue'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
   name: 'DiskonPage',
@@ -199,9 +207,12 @@ export default {
     DiskonEmpty,
     DiskonModal,
     DiskonDeleteModal,
+    Pagination,
   },
   data() {
     return {
+      currentPage: 1,
+      itemsPerPage: 10,
       apiUrl: '',
       tempApiUrl: '',
       showApiInput: false,
@@ -262,6 +273,14 @@ export default {
     }
   },
   computed: {
+    totalPages() {
+      return Math.ceil(this.diskons.length / this.itemsPerPage)
+    },
+    paginatedDiskons() {
+      const start = (this.currentPage - 1) * this.itemsPerPage
+      const end = start + this.itemsPerPage
+      return this.diskons.slice(start, end)
+    },
     filteredDiskons() {
       let result = this.diskons
 
@@ -296,6 +315,13 @@ export default {
     },
   },
   methods: {
+    handleChangePage(page) {
+      this.currentPage = page
+    },
+    handleUpdateItemsPerPage(newItemsPerPage) {
+      this.itemsPerPage = newItemsPerPage
+      this.currentPage = 1 // Reset to first page
+    },
     tesCheck() {
       if (this.selectedIds <= 0) {
         this.showBulkDelete = false

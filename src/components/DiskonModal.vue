@@ -34,7 +34,7 @@
               type="text"
               id="nama_diskon"
               placeholder="Misal: Diskon opening, diskon akhir tahun"
-              class="peer block w-full px-4 pb-2.5 pt-4 text-sm bg-transparent rounded-lg appearance-none outline-none transition-all border focus:ring-0"
+              class="peer block w-full px-4 pb-3 pt-4 text-sm bg-transparent rounded-lg appearance-none outline-none transition-all border focus:ring-0"
               :class="[
                 touched.namaDiskon && errors.namaDiskon
                   ? 'border-red-500 focus:border-red-500'
@@ -99,12 +99,16 @@
                 placeholder="0"
                 min="0"
                 step="0.01"
-                class="peer block w-full px-4 pb-2.5 pt-4 pr-12 text-sm bg-transparent rounded-lg appearance-none outline-none transition-all border focus:ring-0"
-                :class="
+                class="peer block w-full pb-3 pt-4 text-sm bg-transparent rounded-lg appearance-none outline-none transition-all border focus:ring-0"
+                :class="[
+                  // padding dinamis
+                  formData.tipeDiskon === 'rupiah' ? 'pl-12 pr-4' : 'pl-4 pr-12',
+
+                  // error / normal border
                   touched.nilaiDiskon && errors.nilaiDiskon
                     ? 'border-red-500 focus:border-red-500'
-                    : 'border-gray-300 focus:border-green-600'
-                "
+                    : 'border-gray-300 focus:border-green-600',
+                ]"
               />
 
               <label
@@ -122,9 +126,17 @@
               </label>
 
               <span
+                v-if="formData.tipeDiskon === 'rupiah'"
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"
+              >
+                Rp
+              </span>
+
+              <span
+                v-else
                 class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"
               >
-                {{ formData.tipeDiskon === 'persen' ? '%' : 'Rp' }}
+                %
               </span>
             </div>
 

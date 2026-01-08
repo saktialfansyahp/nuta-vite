@@ -65,7 +65,7 @@
               <span class="text-sm font-medium text-gray-900">{{ diskon.namaDiskon }}</span>
               <span
                 v-if="diskon.isBaru"
-                class="px-2 py-0.5 text-xs font-medium text-blue-800 bg-blue-50 rounded-lg"
+                class="px-2 py-0.5 text-xs font-medium text-blue-800 bg-blue-50 rounded-4xl border border-blue-200"
                 >baru</span
               >
             </div>
