@@ -161,7 +161,7 @@
                 @click="$emit('change-tipe', 'persen')"
                 type="button"
                 :class="[
-                  'px-6 py-3 font-medium transition-colors',
+                  'px-6 py-3 font-medium cursor-pointer transition-colors',
                   formData.tipeDiskon === 'persen'
                     ? 'bg-green-50 text-green-600'
                     : 'bg-white text-gray-600 hover:bg-gray-50',
@@ -190,7 +190,7 @@
                 @click="$emit('change-tipe', 'rupiah')"
                 type="button"
                 :class="[
-                  'px-6 py-3 font-medium transition-colors border-l border-gray-300',
+                  'px-6 py-3 font-medium cursor-pointer transition-colors border-l border-gray-300',
                   formData.tipeDiskon === 'rupiah'
                     ? 'bg-green-50 text-green-600'
                     : 'bg-white text-gray-600 hover:bg-gray-50',
