@@ -35,7 +35,7 @@
                 <!-- Trigger -->
                 <button
                   @click="showApiInput = !showApiInput"
-                  class="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-300 rounded-lg"
+                  class="flex cursor-pointer items-center gap-2 px-4 py-2.5 bg-white border border-gray-300 rounded-lg"
                 >
                   <svg class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none">
                     <path d="M3 3h7l2 4h9l-3.5 7" stroke="currentColor" stroke-width="2" />

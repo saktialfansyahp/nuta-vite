@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed inset-0 cursor-pointer bg-black/50 flex items-center justify-center z-50 p-4"
+    class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
     @click.self="$emit('close')"
   >
     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl">
@@ -9,7 +9,10 @@
         <h2 class="text-2xl font-bold text-gray-900">
           {{ isEditMode ? 'Edit Diskon' : 'Tambah Diskon' }}
         </h2>
-        <button @click="$emit('close')" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <button
+          @click="$emit('close')"
+          class="text-gray-400 cursor-pointer hover:text-gray-600 transition-colors"
+        >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
