@@ -57,7 +57,7 @@
               type="checkbox"
               :checked="selectedIds.includes(diskon.id)"
               @change="toggleSelection(diskon.id)"
-              class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+              class="w-4 h-4 text-green-600 border-gray-300 cursor-pointer rounded focus:ring-green-500"
             />
           </td>
           <td class="px-6 py-4">
@@ -76,7 +76,7 @@
           <td class="px-6 py-4 text-right">
             <button
               @click="$emit('edit', diskon)"
-              class="text-gray-400 hover:text-gray-600 transition-colors"
+              class="text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

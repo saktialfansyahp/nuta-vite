@@ -76,7 +76,7 @@
           <button
             v-if="diskons.length > 0 && !showBulkDelete"
             @click="openModal"
-            class="w-full lg:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-4xl transition-colors shadow-sm whitespace-nowrap"
+            class="w-full lg:w-auto cursor-pointer flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-4xl transition-colors shadow-sm whitespace-nowrap"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -92,7 +92,7 @@
             <button
               v-if="showBulkDelete && selectedIds.length > 0"
               @click="cancelSelectAll"
-              class="w-full lg:w-auto flex items-center justify-center gap-2 px-5 py-2.5 text-red-600 border border-red-500 bg-white hover:bg-red-50 font-small rounded-4xl transition-colors whitespace-nowrap"
+              class="w-full cursor-pointer lg:w-auto flex items-center justify-center gap-2 px-5 py-2.5 text-red-600 border border-red-500 bg-white hover:bg-red-50 font-small rounded-4xl transition-colors whitespace-nowrap"
             >
               Batalkan
             </button>
@@ -100,7 +100,7 @@
             <button
               v-if="showBulkDelete && selectedIds.length > 0"
               @click="openBulkDeleteModal"
-              class="w-full lg:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-small rounded-4xl transition-colors whitespace-nowrap"
+              class="w-full cursor-pointer lg:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-small rounded-4xl transition-colors whitespace-nowrap"
             >
               Hapus
             </button>

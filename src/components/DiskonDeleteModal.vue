@@ -26,7 +26,7 @@
       </div>
 
       <ul class="text-sm text-gray-700 list-disc list-inside mb-6">
-        <li>Diskon yang dihapus tidak bisa dikembalikan lagi.</li>
+        <p>Diskon yang dihapus tidak bisa dikembalikan lagi.</p>
       </ul>
 
       <!-- Actions -->

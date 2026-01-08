@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+    class="fixed inset-0 cursor-pointer bg-black/50 flex items-center justify-center z-50 p-4"
     @click.self="$emit('close')"
   >
     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl">
@@ -225,7 +225,7 @@
           v-if="isEditMode"
           type="button"
           @click="$emit('delete')"
-          class="text-red-600 text-sm font-medium hover:underline hover:text-red-700"
+          class="text-red-600 cursor-pointer text-sm font-medium hover:underline hover:text-red-700"
         >
           Hapus
         </button>
@@ -233,7 +233,7 @@
           type="button"
           @click="$emit('submit')"
           :disabled="isSubmitting"
-          class="py-3 text-sm font-medium justify-center text-white bg-green-600 rounded-4xl hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          class="py-3 cursor-pointer text-sm font-medium justify-center text-white bg-green-600 rounded-4xl hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           :class="isEditMode ? 'w-1/5' : 'w-full px-6'"
         >
           <svg v-if="isSubmitting" class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
