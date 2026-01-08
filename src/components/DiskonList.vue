@@ -8,7 +8,7 @@
               type="checkbox"
               :checked="selectAll"
               @change="$emit('toggle-select-all', !selectAll)"
-              class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+              class="w-4 h-4 cursor-pointer text-green-600 border-gray-300 rounded focus:ring-green-500"
             />
           </th>
           <th
@@ -65,7 +65,7 @@
               <span class="text-sm font-medium text-gray-900">{{ diskon.namaDiskon }}</span>
               <span
                 v-if="diskon.isBaru"
-                class="px-2 py-0.5 text-xs font-medium text-blue-700 bg-blue-50 rounded"
+                class="px-2 py-0.5 text-xs font-medium text-blue-800 bg-blue-50 rounded-lg"
                 >baru</span
               >
             </div>
