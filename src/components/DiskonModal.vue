@@ -4,7 +4,6 @@
     @click.self="$emit('close')"
   >
     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl">
-      <!-- Header -->
       <div class="flex items-center justify-between px-8 py-6 border-b border-gray-200">
         <h2 class="text-2xl font-bold text-gray-900">
           {{ isEditMode ? 'Edit Diskon' : 'Tambah Diskon' }}
@@ -24,9 +23,7 @@
         </button>
       </div>
 
-      <!-- Body -->
       <div class="px-8 py-6 space-y-6">
-        <!-- Nama Diskon -->
         <div class="space-y-2">
           <div class="relative">
             <input
@@ -46,7 +43,6 @@
               ]"
             />
 
-            <!-- Floating Label -->
             <label
               for="nama_diskon"
               class="absolute text-sm duration-300 transform origin-[0] bg-white px-2 pointer-events-none -translate-y-4 scale-75 top-2 start-3"
@@ -61,7 +57,6 @@
               Nama Diskon
             </label>
 
-            <!-- Error Icon -->
             <div
               v-if="touched.namaDiskon && errors.namaDiskon"
               class="absolute inset-y-0 right-4 flex items-center pointer-events-none"
@@ -76,7 +71,6 @@
             </div>
           </div>
 
-          <!-- Error Message -->
           <p
             v-if="touched.namaDiskon && errors.namaDiskon"
             class="text-sm text-red-500 flex items-start gap-1"
@@ -92,9 +86,7 @@
           </p>
         </div>
 
-        <!-- Diskon -->
         <div class="flex gap-4">
-          <!-- Input Diskon -->
           <div class="flex-1 space-y-2">
             <div class="relative">
               <input
@@ -115,7 +107,6 @@
                 "
               />
 
-              <!-- Floating Label -->
               <label
                 for="nilai_diskon"
                 class="absolute text-sm duration-300 transform origin-[0] bg-white px-2 pointer-events-none -translate-y-4 scale-75 top-2 start-3"
@@ -130,7 +121,6 @@
                 Diskon
               </label>
 
-              <!-- Suffix (% / Rp) -->
               <span
                 class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"
               >
@@ -138,7 +128,6 @@
               </span>
             </div>
 
-            <!-- Error Message -->
             <p
               v-if="touched.nilaiDiskon && errors.nilaiDiskon"
               class="text-sm text-red-500 flex items-start gap-1"
@@ -154,7 +143,6 @@
             </p>
           </div>
 
-          <!-- Toggle Diskon Type -->
           <div class="flex items-start">
             <div class="inline-flex rounded-lg border border-gray-300 overflow-hidden h-fit">
               <button
@@ -219,7 +207,6 @@
         </div>
       </div>
 
-      <!-- Footer -->
       <div
         class="flex items-center gap-3 px-8 py-6 bg-gray-50 rounded-b-2xl border-t border-gray-200"
         :class="isEditMode ? 'justify-between' : 'justify-center'"

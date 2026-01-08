@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col">
-    <!-- Header -->
     <div class="bg-white border-b border-gray-200 px-6 py-8">
       <div class="flex w-full flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div class="flex flex-col space-y-4 w-full lg:w-auto">
@@ -32,7 +31,6 @@
             </div>
             <div>
               <div class="relative">
-                <!-- Trigger -->
                 <button
                   @click="showApiInput = !showApiInput"
                   class="flex cursor-pointer items-center gap-2 px-4 py-2.5 bg-white border border-gray-300 rounded-lg"
@@ -46,7 +44,6 @@
                   </svg>
                 </button>
 
-                <!-- Dropdown Content -->
                 <div
                   v-if="showApiInput"
                   class="absolute mt-2 w-[420px] bg-white border border-gray-200 rounded-xl shadow-lg p-4 z-20"
@@ -62,7 +59,7 @@
 
                   <button
                     @click="applyApiUrl"
-                    class="mt-4 px-5 py-2 bg-green-600 text-white rounded-full hover:bg-green-700"
+                    class="mt-4 px-5 py-2 cursor-pointer bg-green-600 text-white rounded-full hover:bg-green-700"
                   >
                     Terapkan
                   </button>
@@ -72,7 +69,6 @@
           </div>
         </div>
         <div class="w-full lg:w-auto">
-          <!-- Add Button -->
           <button
             v-if="diskons.length > 0 && !showBulkDelete"
             @click="openModal"
@@ -143,10 +139,8 @@
       @cancel="closeDeleteModal"
     />
 
-    <!-- Main Content -->
     <div class="flex-1 px-6 py-6">
       <div class="w-full px-8 mx-auto">
-        <!-- Diskon List atau Empty State -->
         <DiskonList
           v-if="diskons.length > 0"
           :diskons="filteredDiskons"
@@ -163,12 +157,10 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <div class="px-6 py-6 text-left text-sm text-gray-600 border-t border-gray-200">
       2024 © <span class="font-medium">PT Nusantara Berkah Digital</span>
     </div>
 
-    <!-- Modal Tambah/Edit Diskon -->
     <DiskonModal
       v-if="showModal"
       :isEditMode="isEditMode"
