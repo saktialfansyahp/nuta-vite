@@ -377,6 +377,7 @@ export default {
       this.showDeleteModal = true
     },
     closeDeleteModal() {
+      this.resetForm()
       this.showDeleteModal = false
     },
     openBulkDeleteModal() {
